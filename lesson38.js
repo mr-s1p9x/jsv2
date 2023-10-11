@@ -13,32 +13,55 @@
     и товара и возвращает true или false;
 */
 
+// Проверка возраста
+function userAge (age) {
+    if (age > 24) {
+        return true;
+    } else
+        return false;
+}
 
+// Проверка работы
+function hasJob (job) {
+    if (job === 1) {
+        return true;
+    } else
+        return false;
+}
 
- //console.log(userStat(25, 0));
+// Проверка денег
+function hasMoney (money) {
+    if (money >= 2000) {
+        return true;
+    } else
+        return false;
+}
 
-function userMoney (money) {
-    if (money > 2000) {
-        return console.log(`You can buy a MacBook!`)
+// Основная функция
+function mainT (age, job, money) {
+    let aage = userAge (age);
+    let jjob = hasJob (job);
+    let mmoney = hasMoney (money);
+
+    if (mmoney === true) {
+        console.log('Congrats! You have enough money and you can buy a new MacBook!');
+    } else {
+        console.log(`Sorry, but you ${2000 - money}$ short.`);
+        console.log(`Lets check, maybee we can figure out something....
+
+        * If your age is over 24, and you have a job: we can offer you 500$ loan.
+        * If your age is over 24, and you DO NOT have a job: we can offer only 100$ loan.
+        * If you under 24: we cannot offer you a loan.`);
+
+        if (aage === true && (jjob === true || jjob === false)) {
+            console.log(`You can get a loan within ${jjob ? 500 : 100}$`);
+        } else {
+            console.log(`Sorry, we cannot offer you a loan. Your age is only ${age}. Try within ${25 - age} year(s).`)
+        }
     }
-    return console.log(`Sorry. Not enough money to buy a Macbook. You are missing ${2000 - money} $`)
 }
-
-
-function userStat (usrAge, hasJob) {
-    if (usrAge > 24 && (hasJob === 1 || hasJob === 0)) { // 1 - есть работа, 0 - нет работы
-        return console.log (true, `Your age is ${usrAge}. And you can get a loan within ${hasJob ? 500 : 100} $`);
-    } 
-     return console.log(false, `Sorry, your age is ${age}. It is under 24. You cannot get a loan`);
-}
-
-
-
-
-
-
-
-
+// Вызов функции
+mainT(25, 1, 120);
 
 
 
