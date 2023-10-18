@@ -1,4 +1,5 @@
 // Функции внутри функции
+// test
 
 const KG_IN_USD = 7;
 const KM_IN_USD = 5;
