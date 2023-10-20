@@ -24,7 +24,7 @@ console.log(usersAge);
 const userNames = new Array('Вася', 'Петя', 'Катя');
 console.log(userNames);
 
-// А как же нам оперировать этими массивами? 
+// А как же нам оперировать этими массивами? // test
 function square(el) {
     return el * el;
 }
